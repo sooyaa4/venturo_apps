@@ -64,40 +64,9 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      cartProvider.addCart(product);
-                    },
-                    child: Image.asset(
-                      'assets/button_add.png',
-                      width: 16,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 2,
-                  ),
-                  Text(
-                    // cartProvider.carts,
-                    "1",
-                    style: primaryTextStyle.copyWith(
-                      fontWeight: medium,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 2,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // cartProvider.reduceQuantity(cart.id);
-                    },
-                    child: Image.asset(
-                      'assets/button_min.png',
-                      width: 16,
-                    ),
-                  ),
-                ],
+              Image.asset(
+                'assets/plus.png',
+                width: 16,
               ),
             ],
           ),

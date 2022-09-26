@@ -19,6 +19,7 @@ class CartPage extends StatelessWidget {
         cartProvider.totalPrice(),
       )) {
         cartProvider.carts = [];
+        Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
       }
     }
 
@@ -67,9 +68,10 @@ class CartPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Total Pesanan' '(${cartProvider.totalItems()} Menu)',
+                    'Total Pesanan' '(${cartProvider.totalProduct()} Menu)',
                     style: primaryTextStyle.copyWith(
                       fontSize: 18,
+                      fontWeight: bold,
                     ),
                   ),
                   Text(
@@ -104,11 +106,13 @@ class CartPage extends StatelessWidget {
                         'assets/Vector.png',
                         height: 20,
                       ),
+                      SizedBox(
+                        width: 12,
+                      ),
                       Text(
-                        ' Input voucher',
+                        'Voucher',
                         style: primaryTextStyle.copyWith(
-                          fontSize: 18,
-                        ),
+                            fontSize: 18, fontWeight: bold),
                       ),
                     ],
                   ),
@@ -122,7 +126,7 @@ class CartPage extends StatelessWidget {
                         ),
                       ),
                       Icon(
-                        Icons.arrow_forward,
+                        Icons.arrow_forward_ios,
                         color: primaryTextColor,
                       ),
                     ],
@@ -140,7 +144,7 @@ class CartPage extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/Vector1.png',
-                    height: 20,
+                    height: 25,
                   ),
                   SizedBox(
                     width: 12,
@@ -175,7 +179,7 @@ class CartPage extends StatelessWidget {
                           horizontal: 20,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(25),
                         ),
                       ),
                       child: Row(

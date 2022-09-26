@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
@@ -12,18 +14,19 @@ class TransaksiBarangService {
   ) async {
     var url = Uri.parse('$baseUrl/order');
     var headers = {
+      'Content-type': 'application/json',
       'Accept': 'application/json',
     };
     var body = jsonEncode(
       {
-        "nominal_diskon": 50000,
-        "nominal_pesan": totalPrice,
+        "nominal_diskon": "0",
+        "nominal_pesanan": totalPrice,
         'items': carts
             .map(
               (cart) => {
                 'id': cart.product.id,
                 'harga': cart.product.harga,
-                'catatan': "tes",
+                'catatan': cart.catatan,
               },
             )
             .toList(),

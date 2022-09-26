@@ -5,6 +5,7 @@ import 'package:venturo_apps/component/pesanan.dart';
 import 'package:venturo_apps/providers/cart_provider.dart';
 import 'package:venturo_apps/providers/produk_provider.dart';
 import 'package:venturo_apps/providers/transaksi_produk.dart';
+import 'package:venturo_apps/providers/voucher_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => TransaksiBarangprovider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => VoucherProvider(),
         ),
       ],
       child: MaterialApp(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:venturo_apps/models/cart_model.dart';
 import 'package:venturo_apps/models/produk_barang_model.dart';
+import 'package:venturo_apps/models/voucher.dart';
 
 class CartProvider with ChangeNotifier {
   List<CartModel> _carts = [];
@@ -22,6 +23,7 @@ class CartProvider with ChangeNotifier {
           id: _carts.length,
           product: product,
           jumlah_pesan: 1,
+          catatan: "Tidak ada catatan",
         ),
       );
     }
@@ -52,6 +54,28 @@ class CartProvider with ChangeNotifier {
       total += item.jumlah_pesan;
     }
     return total;
+  }
+
+  totalProduct() {
+    int total = _carts.length;
+    return total;
+  }
+
+  catatan(int id) {
+    _carts[id].catatan;
+
+    notifyListeners();
+  }
+
+  addvoucher() {
+    VoucherModel vcr;
+    _carts.add(
+      CartModel(
+        id: _carts.length,
+        vcr: vcr,
+      ),
+    );
+    notifyListeners();
   }
 
   totalPrice() {
