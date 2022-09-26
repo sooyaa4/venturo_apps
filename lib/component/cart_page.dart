@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
@@ -67,12 +69,22 @@ class CartPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Total Pesanan' '(${cartProvider.totalProduct()} Menu)',
-                    style: primaryTextStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Total Pesanan',
+                        style: primaryTextStyle.copyWith(
+                          fontSize: 18,
+                          fontWeight: bold,
+                        ),
+                      ),
+                      Text(
+                        '(${cartProvider.totalProduct()} Menu)',
+                        style: primaryTextStyle.copyWith(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
                   ),
                   Text(
                     NumberFormat.simpleCurrency(name: 'Rp ', decimalDigits: 0)

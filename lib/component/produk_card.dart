@@ -64,9 +64,14 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Image.asset(
-                'assets/plus.png',
-                width: 16,
+              GestureDetector(
+                onTap: () {
+                  cartProvider.addCart(product);
+                },
+                child: Image.asset(
+                  'assets/plus.png',
+                  width: 16,
+                ),
               ),
             ],
           ),

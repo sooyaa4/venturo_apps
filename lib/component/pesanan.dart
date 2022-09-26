@@ -16,128 +16,128 @@ class PesananPage extends StatelessWidget {
         Provider.of<ProductBarangProvider>(context);
     CartProvider cartProvider = Provider.of<CartProvider>(context);
     VoucherProvider voucherProvider = Provider.of<VoucherProvider>(context);
-    TextEditingController voucher = TextEditingController(text: '');
+    // TextEditingController voucher = TextEditingController(text: '');
 
-    Future<void> voucherDialog() async {
-      return showDialog(
-        context: context,
-        builder: (BuildContext context) => Container(
-          width: MediaQuery.of(context).size.width - (2 * defaultMargin),
-          child: AlertDialog(
-            backgroundColor: backgroundColor2,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            content: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(
-                        Icons.close,
-                        color: primaryTextColor,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Row(
-                    children: [
-                      Image.asset(
-                        'assets/Vector.png',
-                        height: 20,
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Text(
-                        'Punya kode Voucher?',
-                        style: primaryTextStyle.copyWith(
-                            fontSize: 18, fontWeight: bold),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Container(
-                          height: 45,
-                          width: 230,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16,
-                          ),
-                          decoration: BoxDecoration(
-                            color: backgroundColor2,
-                            borderRadius: BorderRadius.circular(12),
-                            // border: Border.all(
-                            //   color: primaryColor,
-                            // ),
-                          ),
-                          child: Center(
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Expanded(
-                                  child: TextFormField(
-                                    style: primaryTextStyle,
-                                    controller: voucher,
-                                    decoration: InputDecoration.collapsed(
-                                      hintText: 'Masukan voucher',
-                                      hintStyle: primaryTextStyle,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    width: 154,
-                    height: 44,
-                    child: TextButton(
-                      onPressed: cartProvider.addvoucher(),
-                      style: TextButton.styleFrom(
-                        backgroundColor: priceColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: Text(
-                        'Validasi voucher',
-                        style: secondaryTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: medium,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      );
-    }
+    // Future<void> voucherDialog() async {
+    //   return showDialog(
+    //     context: context,
+    //     builder: (BuildContext context) => Container(
+    //       width: MediaQuery.of(context).size.width - (2 * defaultMargin),
+    //       child: AlertDialog(
+    //         backgroundColor: backgroundColor2,
+    //         shape: RoundedRectangleBorder(
+    //           borderRadius: BorderRadius.circular(30),
+    //         ),
+    //         content: SingleChildScrollView(
+    //           child: Column(
+    //             children: [
+    //               Align(
+    //                 alignment: Alignment.centerLeft,
+    //                 child: GestureDetector(
+    //                   onTap: () {
+    //                     Navigator.pop(context);
+    //                   },
+    //                   child: Icon(
+    //                     Icons.close,
+    //                     color: primaryTextColor,
+    //                   ),
+    //                 ),
+    //               ),
+    //               SizedBox(
+    //                 height: 12,
+    //               ),
+    //               Row(
+    //                 children: [
+    //                   Image.asset(
+    //                     'assets/Vector.png',
+    //                     height: 20,
+    //                   ),
+    //                   SizedBox(
+    //                     width: 12,
+    //                   ),
+    //                   Text(
+    //                     'Punya kode Voucher?',
+    //                     style: primaryTextStyle.copyWith(
+    //                         fontSize: 18, fontWeight: bold),
+    //                   ),
+    //                 ],
+    //               ),
+    //               SizedBox(
+    //                 height: 12,
+    //               ),
+    //               Container(
+    //                 child: Column(
+    //                   crossAxisAlignment: CrossAxisAlignment.start,
+    //                   children: [
+    //                     SizedBox(
+    //                       height: 12,
+    //                     ),
+    //                     Container(
+    //                       height: 45,
+    //                       width: 230,
+    //                       padding: EdgeInsets.symmetric(
+    //                         horizontal: 16,
+    //                       ),
+    //                       decoration: BoxDecoration(
+    //                         color: backgroundColor2,
+    //                         borderRadius: BorderRadius.circular(12),
+    //                         // border: Border.all(
+    //                         //   color: primaryColor,
+    //                         // ),
+    //                       ),
+    //                       child: Center(
+    //                         child: Row(
+    //                           children: [
+    //                             SizedBox(
+    //                               width: 5,
+    //                             ),
+    //                             Expanded(
+    //                               child: TextFormField(
+    //                                 style: primaryTextStyle,
+    //                                 controller: voucher,
+    //                                 decoration: InputDecoration.collapsed(
+    //                                   hintText: 'Masukan voucher',
+    //                                   hintStyle: primaryTextStyle,
+    //                                 ),
+    //                               ),
+    //                             ),
+    //                           ],
+    //                         ),
+    //                       ),
+    //                     ),
+    //                   ],
+    //                 ),
+    //               ),
+    //               SizedBox(
+    //                 height: 20,
+    //               ),
+    //               Container(
+    //                 width: 154,
+    //                 height: 44,
+    //                 child: TextButton(
+    //                   // onPressed: cartProvider.addvoucher(),
+    //                   style: TextButton.styleFrom(
+    //                     backgroundColor: priceColor,
+    //                     shape: RoundedRectangleBorder(
+    //                       borderRadius: BorderRadius.circular(12),
+    //                     ),
+    //                   ),
+    //                   child: Text(
+    //                     'Validasi voucher',
+    //                     style: secondaryTextStyle.copyWith(
+    //                       fontSize: 16,
+    //                       fontWeight: medium,
+    //                     ),
+    //                   ),
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   );
+    // }
 
     productBarangProvider.getProducts();
     voucherProvider.getVoucher();
@@ -251,15 +251,19 @@ class PesananPage extends StatelessWidget {
                           fontSize: 12,
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          voucherDialog();
-                        },
-                        child: Icon(
-                          Icons.arrow_forward_ios,
-                          color: primaryTextColor,
-                        ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        color: primaryTextColor,
                       ),
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     voucherDialog();
+                      //   },
+                      //   child: Icon(
+                      //     Icons.arrow_forward_ios,
+                      //     color: primaryTextColor,
+                      //   ),
+                      // ),
                       //
                     ],
                   ),

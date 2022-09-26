@@ -11,117 +11,117 @@ class CartCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CartProvider cartProvider = Provider.of<CartProvider>(context);
-    TextEditingController catatan = TextEditingController(text: '');
+    // TextEditingController catatan = TextEditingController(text: '');
 
-    Future<void> catatanDialog() async {
-      return showDialog(
-        context: context,
-        builder: (BuildContext context) => Container(
-          width: MediaQuery.of(context).size.width - (2 * defaultMargin),
-          child: AlertDialog(
-            backgroundColor: backgroundColor2,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            content: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(
-                        Icons.close,
-                        color: primaryTextColor,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Text(
-                    'Masukan catatan',
-                    style: primaryTextStyle.copyWith(
-                        fontSize: 18, fontWeight: bold),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Container(
-                          height: 45,
-                          width: 230,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16,
-                          ),
-                          decoration: BoxDecoration(
-                            color: backgroundColor2,
-                            borderRadius: BorderRadius.circular(12),
-                            // border: Border.all(
-                            //   color: primaryColor,
-                            // ),
-                          ),
-                          child: Center(
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Expanded(
-                                  child: TextFormField(
-                                    style: primaryTextStyle,
-                                    controller: catatan,
-                                    decoration: InputDecoration.collapsed(
-                                      hintText: 'Masukan catatan',
-                                      hintStyle: primaryTextStyle,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    width: 154,
-                    height: 44,
-                    child: TextButton(
-                      onPressed: cartProvider.catatan(cart.id),
-                      style: TextButton.styleFrom(
-                        backgroundColor: priceColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: Text(
-                        'Tambahkan',
-                        style: secondaryTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: medium,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      );
-    }
+    // Future<void> catatanDialog() async {
+    //   return showDialog(
+    //     context: context,
+    //     builder: (BuildContext context) => Container(
+    //       width: MediaQuery.of(context).size.width - (2 * defaultMargin),
+    //       child: AlertDialog(
+    //         backgroundColor: backgroundColor2,
+    //         shape: RoundedRectangleBorder(
+    //           borderRadius: BorderRadius.circular(30),
+    //         ),
+    //         content: SingleChildScrollView(
+    //           child: Column(
+    //             children: [
+    //               Align(
+    //                 alignment: Alignment.centerLeft,
+    //                 child: GestureDetector(
+    //                   onTap: () {
+    //                     Navigator.pop(context);
+    //                   },
+    //                   child: Icon(
+    //                     Icons.close,
+    //                     color: primaryTextColor,
+    //                   ),
+    //                 ),
+    //               ),
+    //               SizedBox(
+    //                 height: 12,
+    //               ),
+    //               Text(
+    //                 'Masukan catatan',
+    //                 style: primaryTextStyle.copyWith(
+    //                     fontSize: 18, fontWeight: bold),
+    //               ),
+    //               SizedBox(
+    //                 height: 12,
+    //               ),
+    //               Container(
+    //                 child: Column(
+    //                   crossAxisAlignment: CrossAxisAlignment.start,
+    //                   children: [
+    //                     SizedBox(
+    //                       height: 12,
+    //                     ),
+    //                     Container(
+    //                       height: 45,
+    //                       width: 230,
+    //                       padding: EdgeInsets.symmetric(
+    //                         horizontal: 16,
+    //                       ),
+    //                       decoration: BoxDecoration(
+    //                         color: backgroundColor2,
+    //                         borderRadius: BorderRadius.circular(12),
+    //                         // border: Border.all(
+    //                         //   color: primaryColor,
+    //                         // ),
+    //                       ),
+    //                       child: Center(
+    //                         child: Row(
+    //                           children: [
+    //                             SizedBox(
+    //                               width: 5,
+    //                             ),
+    //                             Expanded(
+    //                               child: TextFormField(
+    //                                 style: primaryTextStyle,
+    //                                 controller: catatan,
+    //                                 decoration: InputDecoration.collapsed(
+    //                                   hintText: 'Masukan catatan',
+    //                                   hintStyle: primaryTextStyle,
+    //                                 ),
+    //                               ),
+    //                             ),
+    //                           ],
+    //                         ),
+    //                       ),
+    //                     ),
+    //                   ],
+    //                 ),
+    //               ),
+    //               SizedBox(
+    //                 height: 20,
+    //               ),
+    //               Container(
+    //                 width: 154,
+    //                 height: 44,
+    //                 child: TextButton(
+    //                   onPressed: cartProvider.catatan(cart.id),
+    //                   style: TextButton.styleFrom(
+    //                     backgroundColor: priceColor,
+    //                     shape: RoundedRectangleBorder(
+    //                       borderRadius: BorderRadius.circular(12),
+    //                     ),
+    //                   ),
+    //                   child: Text(
+    //                     'Tambahkan',
+    //                     style: secondaryTextStyle.copyWith(
+    //                       fontSize: 16,
+    //                       fontWeight: medium,
+    //                     ),
+    //                   ),
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   );
+    // }
 
     return Container(
       margin: EdgeInsets.only(
@@ -183,16 +183,23 @@ class CartCard extends StatelessWidget {
                         SizedBox(
                           width: 4,
                         ),
-                        GestureDetector(
-                          onTap: catatanDialog,
-                          child: Text(
-                            'Tambahkan Catatan',
-                            style: primaryTextStyle.copyWith(
-                              fontSize: 12,
-                              fontWeight: light,
-                            ),
+                        Text(
+                          'Tambahkan Catatan',
+                          style: primaryTextStyle.copyWith(
+                            fontSize: 12,
+                            fontWeight: light,
                           ),
                         ),
+                        // GestureDetector(
+                        //   onTap: catatanDialog,
+                        //   child: Text(
+                        //     'Tambahkan Catatan',
+                        //     style: primaryTextStyle.copyWith(
+                        //       fontSize: 12,
+                        //       fontWeight: light,
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ],

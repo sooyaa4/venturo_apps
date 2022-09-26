@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:venturo_apps/models/cart_model.dart';
 import 'package:venturo_apps/models/produk_barang_model.dart';
-import 'package:venturo_apps/models/voucher.dart';
+// import 'package:venturo_apps/models/voucher.dart';
 
 class CartProvider with ChangeNotifier {
   List<CartModel> _carts = [];
@@ -61,22 +61,22 @@ class CartProvider with ChangeNotifier {
     return total;
   }
 
-  catatan(int id) {
-    _carts[id].catatan;
+  // catatan(int id) {
+  //   _carts[id].catatan;
 
-    notifyListeners();
-  }
+  //   notifyListeners();
+  // }
 
-  addvoucher() {
-    VoucherModel vcr;
-    _carts.add(
-      CartModel(
-        id: _carts.length,
-        vcr: vcr,
-      ),
-    );
-    notifyListeners();
-  }
+  // addvoucher() {
+  //   VoucherModel vcr;
+  //   _carts.add(
+  //     CartModel(
+  //       id: _carts.length,
+  //       vcr: vcr,
+  //     ),
+  //   );
+  //   notifyListeners();
+  // }
 
   totalPrice() {
     double total = 0;
